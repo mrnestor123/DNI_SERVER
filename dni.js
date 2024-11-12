@@ -1,5 +1,5 @@
-//const pkcs11js = require('pkcs11js');
-//const pkcs11 = new pkcs11js.PKCS11();
+const pkcs11js = require('pkcs11js');
+const pkcs11 = new pkcs11js.PKCS11();
 
 
 function initDni(){
@@ -19,7 +19,6 @@ function getDni(){
 
 
     const hObject = pkcs11.C_FindObjects(session);
-    //pkcs11.C_FindObjectsFinal(session);
     pkcs11.C_CloseSession(session);
     pkcs11.C_Finalize();
 

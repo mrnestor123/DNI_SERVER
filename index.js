@@ -27,9 +27,7 @@ app.get('/dni/find', async (req,res)=>{
     try {
         let padron = await findPadron('26748186Z')
 
-        console.log('PADRON', padron)
         
-
     }catch(e){
         res.status(400).json(
             {error:'no se ha encontrado el dni'}
