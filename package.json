@@ -1,0 +1,8 @@
+{
+    "name": "dniServer",
+    "dependencies": {
+        "express": "^4.21.1",
+        "node": "^23.1.0",
+        "pkcs11js": "^2.1.6"
+    }
+}
