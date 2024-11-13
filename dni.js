@@ -2,41 +2,64 @@ const pkcs11js = require('pkcs11js');
 const pkcs11 = new pkcs11js.PKCS11();
 
 
-function initDni(){
 
 
-    //pkcs11.load('/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so');
-    //pkcs11.load('/System/Volumes/Data/Library/Libpkcs11-dnie/lib/libpkcs11-dnie.so');
-}
+pkcs11.load('/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so');
 
-function getDni(){
-    pkcs11.C_Initialize();
+
+let attempt = 0;
+
+function getDNI(){
+
+    if(attempt == 0){ pkcs11.C_Initialize();}
+
+    attempt++;
 
     const slotList = pkcs11.C_GetSlotList(true);
     const session = pkcs11.C_OpenSession(slotList[0], pkcs11js.CKF_SERIAL_SESSION);
-
+    
     pkcs11.C_FindObjectsInit(session, [{ type: pkcs11js.CKA_CLASS, value: pkcs11js.CKO_CERTIFICATE }]);
 
 
     const hObject = pkcs11.C_FindObjects(session);
-    pkcs11.C_CloseSession(session);
-    pkcs11.C_Finalize();
+
 
     if (hObject) {
         const attrs = pkcs11.C_GetAttributeValue(session, hObject, [
             { type: pkcs11js.CKA_SUBJECT },
         ]);
 
-        const dni = attrs[0].value;
-        
-        return dni
-        console.log(`${subject}`);
 
-    } else throw Error()
+        // esto solo será para dni español !!!
+        let buffer = (Buffer.from(attrs[0].value).toString())
+
+        console.log( buffer)
+
+        let dni = buffer.match(`[0-9]{8}[A-Z]`)[0];
+        
+
+        let start =buffer.indexOf('$') != -1 ? buffer.indexOf('$'): buffer.indexOf('-') == -1 ? buffer.indexOf(',') : buffer.indexOf('-')
+        let end = buffer.indexOf('(')
+
+        let fullName = buffer.slice(start,end)
+
+        let name = fullName.slice(1).split(',')[1]
+        let surname = fullName.slice(1).split(',')[0]
+
+        
+        pkcs11.C_CloseSession(session);
+        pkcs11.C_Finalize();
+        attempt = 0;
+
+        return {'dni':dni, 'name':name.trim(), 'surname': surname.trim()}
+    } else {
+       
+    
+        throw Error()
+    } 
     
 
 }
-
 
 function findPadron(dni){
     
@@ -52,7 +75,7 @@ function findPadron(dni){
             </soapenv:Body>
         </soapenv:Envelope>`;
 
-    fetch(wsdlUrl, {
+    return fetch(wsdlUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'text/xml; charset=utf-8',
@@ -62,15 +85,20 @@ function findPadron(dni){
     })
     .then(response => response.text())
     .then(data => {
-        console.log(data);
+        if(data.match('faultcode')){
+            //console.log('FAULTCODE')
+            let error = data.match(/<faultstring>(.*?)<\/faultstring>/);
+            console.log(error[1])
+            throw Error(error[1])
+        } else {
+            let base64 =data.match(/<return>(.*?)<\/return>/)[1];
+            return base64;
+        }
     })
-    .catch(error => {
-        console.error('Error:', error);
-    });
 }
 
 
 
-module.exports = {initDni,getDni, findPadron}
+module.exports = {getDNI, findPadron}
 
 
