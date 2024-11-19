@@ -26,10 +26,10 @@ const corsOpt = {
     origin: ['http://localhost:5500', 'localhost:5500', '127.0.1.1:5500', 'https://public.digitalvalue.es'], 
     methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'], 
     allowedHeaders: ['Content-Type', 'Authorization'] 
-    };
+};
     
-    app.use(cors(corsOpt)); // cors for all the routes of the application
-    app.options('*', cors(corsOpt)); 
+app.use(cors(corsOpt)); // cors for all the routes of the application
+app.options('*', cors(corsOpt)); 
       
 
 
