@@ -70,7 +70,6 @@ app.get('/print/check', (req,res)=>{
 app.get('/print/list', async (req,res)=>{
     try {
         let printerNames = await getPrinterNames();
-        console.log('PRINTERNAMES', printerNames)
         return res.status(200).json(printerNames);
     } catch(e){
         console.log(e.toString())
@@ -90,7 +89,6 @@ app.get('/print/options', async (req,res)=>{
         res.status(400).json({error: 'No se ha encontrado impresoras'})
     }
 })
-
 
 function logError(error) {
     if(error){
