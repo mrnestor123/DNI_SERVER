@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const { getDNI, findPadron } = require('./dni');
 
-import {
+const {
     getCompletedQueue,
     getNotCompletedQueue,
     getPrinterNames,
@@ -14,7 +14,7 @@ import {
     printFile,
     cancelAllJobs,
     cancelJob,
-} from "node-cups";
+} = require("node-cups");
 
 var fs = require('fs');
 const cors = require('cors');
