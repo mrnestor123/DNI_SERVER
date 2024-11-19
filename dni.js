@@ -2,8 +2,6 @@ const pkcs11js = require('pkcs11js');
 const pkcs11 = new pkcs11js.PKCS11();
 
 
-
-
 pkcs11.load('/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so');
 
 
@@ -29,18 +27,11 @@ function getDNI(){
             { type: pkcs11js.CKA_SUBJECT },
         ]);
 
-
         // esto solo será para dni español !!!
         let buffer = (Buffer.from(attrs[0].value).toString())
-
-        console.log( buffer)
-
         let dni = buffer.match(`[0-9]{8}[A-Z]`)[0];
-        
-
-        let start =buffer.indexOf('$') != -1 ? buffer.indexOf('$'): buffer.indexOf('-') == -1 ? buffer.indexOf(',') : buffer.indexOf('-')
+        let start = buffer.indexOf('$') != -1 ? buffer.indexOf('$'): buffer.indexOf('-') == -1 ? buffer.indexOf(',') : buffer.indexOf('-')
         let end = buffer.indexOf('(')
-
         let fullName = buffer.slice(start,end)
 
         let name = fullName.slice(1).split(',')[1]
@@ -51,10 +42,8 @@ function getDNI(){
         pkcs11.C_Finalize();
         attempt = 0;
 
-        return {'dni':dni, 'name':name.trim(), 'surname': surname.trim()}
+        return {'dni':dni, 'name': name && name.trim(), 'surname': surname && surname.trim()}
     } else {
-       
-    
         throw Error()
     } 
     
@@ -75,6 +64,7 @@ function findPadron(dni){
             </soapenv:Body>
         </soapenv:Envelope>`;
 
+
     return fetch(wsdlUrl, {
         method: 'POST',
         headers: {
@@ -88,7 +78,6 @@ function findPadron(dni){
         if(data.match('faultcode')){
             //console.log('FAULTCODE')
             let error = data.match(/<faultstring>(.*?)<\/faultstring>/);
-            console.log(error[1])
             throw Error(error[1])
         } else {
             let base64 =data.match(/<return>(.*?)<\/return>/)[1];
@@ -96,8 +85,6 @@ function findPadron(dni){
         }
     })
 }
-
-
 
 module.exports = {getDNI, findPadron}
 
