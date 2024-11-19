@@ -4,6 +4,18 @@ const express = require('express');
 const app = express();
 const { getDNI, findPadron } = require('./dni');
 
+import {
+    getCompletedQueue,
+    getNotCompletedQueue,
+    getPrinterNames,
+    getPrinterOptions,
+    getAllPrinterOptions,
+    printBuffer,
+    printFile,
+    cancelAllJobs,
+    cancelJob,
+} from "node-cups";
+
 var fs = require('fs');
 const cors = require('cors');
 
@@ -45,9 +57,42 @@ app.get('/dni/search/:dni', async (req,res)=>{
     }
 })
 
+
+app.get('/print/check', (req,res)=>{
+    try{
+        let checkPrint = checkPrinter()
+    } catch(e){
+        logError(e && e.toString)
+        res.status(400).json({error: 'No se ha encontrado el padron con este dni'})
+    }
+})
+
+app.get('/print/list', async (req,res)=>{
+    try {
+        let printerNames = await getPrinterNames();
+        return res.status(200).json(printerNames);
+    } catch(e){
+        logError(e && e.toString)
+        res.status(400).json({error: 'No se ha encontrado impresoras'})
+    }
+})
+
+app.get('/print/options', async (req,res)=>{
+    try {
+        let printerNames = await getPrinterNames();
+        let printerOptions = await getPrinterOptions(printerNames[0]);
+        console.log(printerOptions);
+
+    } catch(e){
+        logError(e && e.toString)
+        res.status(400).json({error: 'No se ha encontrado impresoras'})
+    }
+})
+
+
 function logError(error) {
     if(error){
-        fs.appendFile('errores_server.txt', 
+        fs.appendFile('info_server.txt', 
             new Date().toISOString() + '  ' + error + '\n', 
             function (err) {
             if (err) throw err;
@@ -55,7 +100,6 @@ function logError(error) {
         });
     }
 }
-
 
 
 app.listen(PORT, ()=>{

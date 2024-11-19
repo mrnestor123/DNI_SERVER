@@ -46,8 +46,6 @@ function getDNI(){
     } else {
         throw Error()
     } 
-    
-
 }
 
 function findPadron(dni){
@@ -80,7 +78,7 @@ function findPadron(dni){
             let error = data.match(/<faultstring>(.*?)<\/faultstring>/);
             throw Error(error[1])
         } else {
-            let base64 =data.match(/<return>(.*?)<\/return>/)[1];
+            let base64 = data.match(/<return>(.*?)<\/return>/)[1];
             return base64;
         }
     })
