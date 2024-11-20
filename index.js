@@ -72,7 +72,7 @@ app.get('/print/check', async (req,res)=>{
             let notCompleted = await getNotCompletedQueue();
             
 
-            if(!notCompleted || !notCompleted.length && !notCompleted.filter((f)=>isNow(f.date))){
+            if(!notCompleted || !notCompleted.length || notCompleted.filter((f)=>isNow(f.date)).length == 0){
                res.status(400).json({'error': 'No se ha enviado ningún documento a la impresora'}) 
             } else {
                 // TO do: SI SE HA IMPRESO BIEN !
