@@ -68,10 +68,10 @@ app.get('/print/check', async (req,res)=>{
 
         if(printerNames && printerNames.length > 0 ){
             let notCompleted = await getNotCompletedQueue();
-            console.log('NOT COMPLETED', completed)
+            console.log('NOT COMPLETED', notCompleted)
          
             if(!notCompleted || !notCompleted.length || notCompleted.filter((f)=>isNow(f.date)).length == 0){
-               return res.status(400).json({error: 'No se ha enviado ningún documento a la impresora'}) 
+               return res.status(400).json({error: 'No se ha enviado ningún documento a la impresora ahora'}) 
             } else {
                 // TO do: SI SE HA IMPRESO BIEN !
                 let completed = await getCompletedQueue() 
