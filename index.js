@@ -69,26 +69,25 @@ app.get('/print/check', async (req,res)=>{
         if(printerNames && printerNames.length > 0 ){
             let notCompleted = await getNotCompletedQueue();
             console.log('NOT COMPLETED', completed)
-
          
             if(!notCompleted || !notCompleted.length || notCompleted.filter((f)=>isNow(f.date)).length == 0){
-               res.status(400).json({error: 'No se ha enviado ningún documento a la impresora'}) 
+               return res.status(400).json({error: 'No se ha enviado ningún documento a la impresora'}) 
             } else {
                 // TO do: SI SE HA IMPRESO BIEN !
                 let completed = await getCompletedQueue() 
                 console.log('COMPLETED', completed)
                     
                 if(!completed || !completed.length || completed.filter((f)=>isNow(f.date)).length == 0){
-                    res.status(200).json({message: 'Imprimiendo...'})
+                   return  res.status(200).json({message: 'Imprimiendo...'})
                 } else {
-                    res.status(200).json({ok:true})
+                    return res.status(200).json({ok:true})
                 }
             }
 
             console.log(printerOptions);
         } else {
             // no conectada
-            res.status(400).json({error: 'La impresora no está conectada', offline:true})
+            return res.status(400).json({error: 'La impresora no está conectada', offline:true})
         }
     } catch(e){
         logError(e && e.toString)
