@@ -66,17 +66,17 @@ app.get('/print/check', async (req,res)=>{
         // COMPROBAMOS SI HAY ALGÚN TRABAJO EN COLA DE HACE 5 MINUTOS
         let printerNames = await getPrinterNames();
 
-        let error = '';
-
         if(printerNames && printerNames.length > 0 ){
             let notCompleted = await getNotCompletedQueue();
-            
+            console.log('NOT COMPLETED', completed)
 
+         
             if(!notCompleted || !notCompleted.length || notCompleted.filter((f)=>isNow(f.date)).length == 0){
-               res.status(400).json({'error': 'No se ha enviado ningún documento a la impresora'}) 
+               res.status(400).json({error: 'No se ha enviado ningún documento a la impresora'}) 
             } else {
                 // TO do: SI SE HA IMPRESO BIEN !
                 let completed = await getCompletedQueue() 
+                console.log('COMPLETED', completed)
                     
                 if(!completed || !completed.length || completed.filter((f)=>isNow(f.date)).length == 0){
                     res.status(200).json({message: 'Imprimiendo...'})
@@ -92,6 +92,7 @@ app.get('/print/check', async (req,res)=>{
         }
     } catch(e){
         logError(e && e.toString)
+        console.log('ERROR', e)
         res.status(400).json({error: 'Error inesperado'})
     }
 })
