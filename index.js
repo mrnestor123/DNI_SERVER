@@ -57,39 +57,37 @@ app.get('/dni/search/:dni', async (req,res)=>{
     }
 })
 
+function isNow(date){
+    return (new Date().getTime()-new Date(date).getTime())/60000 < 5
+}
 
 app.get('/print/check', async (req,res)=>{
     try {
         // COMPROBAMOS SI HAY ALGÚN TRABAJO EN COLA DE HACE 5 MINUTOS
         let printerNames = await getPrinterNames();
 
+        let error = '';
+
         if(printerNames && printerNames.length > 0 ){
-            let printerOptions = await getPrinterOptions(printerNames[0]);
-            
             let notCompleted = await getNotCompletedQueue();
             
-            let processingQueue = []
-            
-            console.log('notCompleted', notCompleted)
-            
-            if(notCompleted.length){
-                processingQueue = notCompleted.filter((f)=>{
-                    (new Date().getTime()-new Date(f.date).getTime())/60000 < 5
-                })
-            }
 
-            console.log('processing', processingQueue)
-            
-            if(processingQueue.length){
-                res.status(200).json({message: 'Imprimiendo...'})
+            if(!notCompleted || !notCompleted.length && !notCompleted.filter((f)=>isNow(f.date))){
+               res.status(400).json({'error': 'No se ha enviado ningún documento a la impresora'}) 
             } else {
                 // TO do: SI SE HA IMPRESO BIEN !
                 let completed = await getCompletedQueue() 
-                console.log('completed', completed)
-                res.status(200).json({ok:true})
+                    
+                if(!completed || !completed.length || completed.filter((f)=>isNow(f.date)).length == 0){
+                    res.status(200).json({message: 'Imprimiendo...'})
+                } else {
+                    res.status(200).json({ok:true})
+                }
             }
+
             console.log(printerOptions);
         } else {
+            // no conectada
             res.status(400).json({error: 'La impresora no está conectada', offline:true})
         }
     } catch(e){
