@@ -85,8 +85,8 @@ app.get('/print/check', async (req,res)=>{
 
 
 app.get('/print/cancel', async (req,res)=>{
-    try{
-        cancelAllJobs()
+    try {
+        await cancelAllJobs()
         res.status(200).json({ok:true})
     }catch(e){
         res.status(400).json({error:'Error'})
