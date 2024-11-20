@@ -69,17 +69,17 @@ app.get('/print/check', async (req,res)=>{
 
         if(printerNames && printerNames.length > 0 ){
             let notCompleted = await getNotCompletedQueue();
-            console.log('PROCESSING', notCompleted.filter((f)=>isNow(f.date)).length == 0)
+            console.log('PROCESSING PRINT', notCompleted.filter((f)=>isNow(f.date)).length)
          
             if(!notCompleted || !notCompleted.length || notCompleted.filter((f)=>isNow(f.date)).length == 0){
                return res.status(400).json({error: {es:'Revisa los ajustes de la impresora, el papel y la tinta.',va:"Revisa els ajustos de la impresora. El paper o la tinta"}}) 
             } else {
                 // TO do: SI SE HA IMPRESO BIEN !
                 let completed = await getCompletedQueue() 
-                console.log('COMPLETED', completed)
+                console.log('JUST COMPLETED', completed.filter((f)=>isNow(f.date)).length > 0)
                     
                 if(!completed || !completed.length || completed.filter((f)=>isNow(f.date)).length == 0){
-                   return  res.status(200).json({message: 'Imprimiendo...'})
+                   return res.status(200).json({message: 'Imprimiendo...'})
                 } else {
                     return res.status(200).json({ok:true})
                 }
@@ -99,7 +99,7 @@ app.get('/print/check', async (req,res)=>{
 app.get('/print/cancel', async (req,res)=>{
     try {
         console.log('CANCELLING')
-        let cancel = await cancelAllJobs()
+        //let cancel = await cancelAllJobs()
         console.log('jobs canceled', cancel)
 
         res.status(200).json({ok:true})
