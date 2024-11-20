@@ -58,7 +58,7 @@ app.get('/dni/search/:dni', async (req,res)=>{
 })
 
 function isNow(date){
-    console.log('TIME',(new Date().getTime()-new Date(date).getTime())/60000 )
+    console.log('TIME', date, (new Date().getTime()-new Date(date).getTime())/60000 )
     return ((new Date().getTime()-new Date(date).getTime())/60000) < 3
 }
 
