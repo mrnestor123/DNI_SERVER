@@ -58,12 +58,28 @@ app.get('/dni/search/:dni', async (req,res)=>{
 })
 
 
-app.get('/print/check', (req,res)=>{
-    try{
-        let checkPrint = checkPrinter()
+app.get('/print/check', async (req,res)=>{
+    try {
+        let printerNames = await getPrinterNames();
+        if(printerNames && printerNames.length > 0 ){
+            let printerOptions = await getPrinterOptions(printerNames[0]);
+            console.log('getNotCompletedQueue')
+            let notCompleted = await getNotCompletedQueue();
+            console.log('NOT', notCompleted)
+            if(notCompleted.length){
+                res.status(200).json({message: 'Imprimiendo...'})
+            } else {
+               let completed = await getCompletedQueue() 
+               console.log('completed', completed)
+               res.status(200).json({ok:true})
+            }
+            console.log(printerOptions);
+        } else {
+            res.status(400).json({error: 'La impresora no está conectada', offline:true})
+        }
     } catch(e){
         logError(e && e.toString)
-        res.status(400).json({error: 'No se ha encontrado el padron con este dni'})
+        res.status(400).json({error: 'Error inesperado'})
     }
 })
 
