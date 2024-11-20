@@ -58,7 +58,8 @@ app.get('/dni/search/:dni', async (req,res)=>{
 })
 
 function isNow(date){
-    return (new Date().getTime()-new Date(date).getTime())/60000 < 3
+    console.log('TIME',(new Date().getTime()-new Date(date).getTime())/60000 )
+    return ((new Date().getTime()-new Date(date).getTime())/60000) < 3
 }
 
 app.get('/print/check', async (req,res)=>{
@@ -68,7 +69,7 @@ app.get('/print/check', async (req,res)=>{
 
         if(printerNames && printerNames.length > 0 ){
             let notCompleted = await getNotCompletedQueue();
-            console.log('NOT COMPLETED', notCompleted)
+            console.log('PROCESSING', notCompleted.filter((f)=>isNow(f.date)).length == 0)
          
             if(!notCompleted || !notCompleted.length || notCompleted.filter((f)=>isNow(f.date)).length == 0){
                return res.status(400).json({error: {es:'Revisa los ajustes de la impresora, el papel y la tinta.',va:"Revisa els ajustos de la impresora. El paper o la tinta"}}) 
