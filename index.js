@@ -58,7 +58,7 @@ app.get('/dni/search/:dni', async (req,res)=>{
 })
 
 function isNow(date){
-    return (new Date().getTime()-new Date(date).getTime())/60000 < 5
+    return (new Date().getTime()-new Date(date).getTime())/60000 < 3
 }
 
 app.get('/print/check', async (req,res)=>{
@@ -71,7 +71,7 @@ app.get('/print/check', async (req,res)=>{
             console.log('NOT COMPLETED', notCompleted)
          
             if(!notCompleted || !notCompleted.length || notCompleted.filter((f)=>isNow(f.date)).length == 0){
-               return res.status(400).json({error: 'No se ha enviado ningún documento a la impresora ahora'}) 
+               return res.status(400).json({error: {es:'Revisa los ajustes de la impresora, el papel y la tinta.',va:"Revisa els ajustos de la impresora. El paper o la tinta"}}) 
             } else {
                 // TO do: SI SE HA IMPRESO BIEN !
                 let completed = await getCompletedQueue() 
@@ -83,8 +83,6 @@ app.get('/print/check', async (req,res)=>{
                     return res.status(200).json({ok:true})
                 }
             }
-
-            console.log(printerOptions);
         } else {
             // no conectada
             return res.status(400).json({error: 'La impresora no está conectada', offline:true})
