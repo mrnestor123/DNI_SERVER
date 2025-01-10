@@ -48,7 +48,7 @@ function getDNI(){
     } 
 }
 
-function findPadron(dni){
+function findPadron(dni, modelo = 1){
     
     const wsdlUrl = 'https://etributa.alcasser.es:8643/epadronws/services/CertificadoEmpadronamientoPort?wsdl';
     const soapRequest = `
@@ -56,7 +56,7 @@ function findPadron(dni){
             <soapenv:Header/>
             <soapenv:Body>
                 <ws:getCertificado>
-                <modelo>1</modelo>
+                <modelo>${modelo}</modelo>
                 <dni>${dni}</dni>
                 </ws:getCertificado>
             </soapenv:Body>

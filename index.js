@@ -49,7 +49,7 @@ app.get('/dni/check', (req,res)=>{
 
 app.get('/dni/search/:dni', async (req,res)=>{
     try {
-        let padron = await findPadron(req.params.dni)
+        let padron = await findPadron(req.params.dni, req.query.modelo)
         res.status(200).json(padron)
     } catch(e){
         logError(e && e.toString)
