@@ -23,7 +23,11 @@ const PORT = 8080
 
 // enable cors to the server
 const corsOpt = {
-    origin: ['http://localhost:5500', 'localhost:5500', '127.0.1.1:5500', 'https://public.digitalvalue.es'], 
+    origin: [
+        'https://zity-dashboard.digitalvalue.es',
+        'http://localhost:5500', 'localhost:5500', 
+        '127.0.1.1:5500', 'https://public.digitalvalue.es'
+    ], 
     methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'], 
     allowedHeaders: ['Content-Type', 'Authorization'] 
 };
