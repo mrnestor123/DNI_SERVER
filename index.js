@@ -44,19 +44,17 @@ app.get('/dni/check', (req,res)=>{
         res.status(200).json(data)
     } catch(e){
         logError(e && e.toString())
-        res.status(400).json(
-            {error:'no se ha encontrado el dni'}
-        )
+        res.status(400).json({error:'no se ha encontrado el dni'})
     }
 })
 
 
 app.get('/dni/search/:dni', async (req,res)=>{
     try {
-        let padron = await findPadron(req.params.dni, req.query.modelo)
+        let padron = await findPadron(req.params.dni, req.query.model)
         res.status(200).json(padron)
     } catch(e){
-        logError(e && e.toString)
+        logError(e && e.toString())
         res.status(400).json({error: 'No se ha encontrado el padron con este dni'})
     }
 })
@@ -145,7 +143,6 @@ function logError(error) {
         });
     }
 }
-
 
 app.listen(PORT, ()=>{
     console.log('Server is running on port ' + PORT);

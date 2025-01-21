@@ -1,9 +1,6 @@
-const pkcs11js = require('pkcs11js');
-const pkcs11 = new pkcs11js.PKCS11();
-
-
-pkcs11.load('/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so');
-
+//const pkcs11js = require('pkcs11js');
+//const pkcs11 = new pkcs11js.PKCS11();
+//pkcs11.load('/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so');
 
 let attempt = 0;
 
@@ -49,6 +46,8 @@ function getDNI(){
 }
 
 function findPadron(dni, modelo = 1){
+
+    console.log('MODELO', modelo)
     
     const wsdlUrl = 'https://etributa.alcasser.es:8643/epadronws/services/CertificadoEmpadronamientoPort?wsdl';
     const soapRequest = `
@@ -84,6 +83,6 @@ function findPadron(dni, modelo = 1){
     })
 }
 
-module.exports = {getDNI, findPadron}
+module.exports = { getDNI, findPadron }
 
 
