@@ -2,7 +2,7 @@
 // hola
 const express = require('express');
 const app = express();
-const { getDNI, findPadron } = require('./dni');
+const { getDNI, findPadron, DVfindPadron} = require('./dni');
 
 const {
     getCompletedQueue,
@@ -26,7 +26,9 @@ const corsOpt = {
     origin: [
         'https://zity-dashboard.digitalvalue.es',
         'http://localhost:5500', 'localhost:5500', 
-        '127.0.1.1:5500', 'https://public.digitalvalue.es'
+        '127.0.1.1:5500', 
+        'https://public.digitalvalue.es',
+        'http://localhost:8086'
     ], 
     methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'], 
     allowedHeaders: ['Content-Type', 'Authorization'] 
@@ -34,7 +36,6 @@ const corsOpt = {
     
 app.use(cors(corsOpt)); // cors for all the routes of the application
 app.options('*', cors(corsOpt)); 
-      
 
 
 app.get('/dni/check', (req,res)=>{
@@ -51,9 +52,19 @@ app.get('/dni/check', (req,res)=>{
 
 app.get('/dni/search/:dni', async (req,res)=>{
     try {
-        let padron = await findPadron(req.params.dni, req.query.model)
+        let padron;
+
+        console.log('params', req.params, req.query, req.query.realm)
+        
+        if(req.query?.realm && req.query.realm !='alcasser'){
+            padron = await DVfindPadron(req.params.dni, req.query.model, {realm: req.query?.realm}) 
+        } else {
+            padron = await findPadron(req.params.dni, req.query.model, {realm: req.query?.realm, birthDate: req.query.birthDate, document: req.query.document})
+        } 
+
         res.status(200).json(padron)
     } catch(e){
+        console.log('errror', e)
         logError(e && e.toString())
         res.status(400).json({error: 'No se ha encontrado el padron con este dni'})
     }
@@ -71,14 +82,12 @@ app.get('/print/check', async (req,res)=>{
 
         if(printerNames && printerNames.length > 0 ){
             let notCompleted = await getNotCompletedQueue();
-            console.log('PROCESSING PRINT', notCompleted.filter((f)=>isNow(f.date)).length)
          
             if(!notCompleted || !notCompleted.length || notCompleted.filter((f)=>isNow(f.date)).length == 0){
                return res.status(400).json({error: {es:'Revisa los ajustes de la impresora, el papel y la tinta.',va:"Revisa els ajustos de la impresora. El paper o la tinta"}}) 
             } else {
                 // TO do: SI SE HA IMPRESO BIEN !
                 let completed = await getCompletedQueue() 
-                console.log('JUST COMPLETED', completed.filter((f)=>isNow(f.date)).length > 0)
                     
                 if(!completed || !completed.length || completed.filter((f)=>isNow(f.date)).length == 0){
                    return res.status(200).json({message: 'Imprimiendo...'})

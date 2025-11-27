@@ -1,8 +1,177 @@
-2025-01-13T12:10:01.246Z  function toString() { [native code] }
-2025-01-13T12:10:03.436Z  function toString() { [native code] }
-2025-01-13T12:10:05.577Z  function toString() { [native code] }
-2025-01-13T12:10:07.674Z  function toString() { [native code] }
-2025-01-13T12:10:18.109Z  function toString() { [native code] }
-2025-01-13T12:10:20.201Z  function toString() { [native code] }
-2025-01-13T12:10:22.301Z  function toString() { [native code] }
-2025-01-13T12:10:24.397Z  function toString() { [native code] }
+2025-11-21T10:39:49.225Z  TypeError: Cannot read properties of undefined (reading 'access_token')
+2025-11-21T10:51:39.996Z  TypeError: Cannot read properties of null (reading '1')
+2025-11-21T10:51:42.085Z  TypeError: Cannot read properties of null (reading '1')
+2025-11-21T10:51:44.164Z  TypeError: Cannot read properties of null (reading '1')
+2025-11-21T10:51:46.254Z  TypeError: Cannot read properties of null (reading '1')
+2025-11-24T09:12:41.071Z  Error: No se ha encontrado el padron con este dni
+2025-11-24T09:12:43.207Z  Error: No se ha encontrado el padron con este dni
+2025-11-24T09:12:45.348Z  Error: No se ha encontrado el padron con este dni
+2025-11-24T09:12:47.488Z  Error: No se ha encontrado el padron con este dni
+2025-11-24T09:18:21.204Z  Error: No se ha encontrado el padron con este dni
+2025-11-24T09:18:23.337Z  Error: No se ha encontrado el padron con este dni
+2025-11-24T09:18:25.468Z  Error: No se ha encontrado el padron con este dni
+2025-11-27T11:00:07.525Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:00:09.036Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:01:07.756Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:01:09.272Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:01:10.521Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:01:10.780Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:01:12.039Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:01:12.285Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:01:13.545Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:01:13.792Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:01:15.602Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:01:15.605Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:01:17.600Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:01:17.602Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:01:19.602Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:01:19.604Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:01:21.599Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:01:21.601Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:01:34.891Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:02:45.036Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:04:09.937Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:04:39.595Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:06:06.459Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:06:51.073Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:08:39.813Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:08:41.320Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:08:42.827Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:09:28.885Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:09:34.683Z  TypeError: Cannot read properties of null (reading '1')
+2025-11-27T11:09:36.791Z  TypeError: Cannot read properties of null (reading '1')
+2025-11-27T11:09:38.886Z  TypeError: Cannot read properties of null (reading '1')
+2025-11-27T11:09:40.967Z  TypeError: Cannot read properties of null (reading '1')
+2025-11-27T11:20:23.070Z  TypeError: Cannot read properties of null (reading '1')
+2025-11-27T11:20:25.148Z  TypeError: Cannot read properties of null (reading '1')
+2025-11-27T11:20:27.221Z  TypeError: Cannot read properties of null (reading '1')
+2025-11-27T11:20:29.305Z  TypeError: Cannot read properties of null (reading '1')
+2025-11-27T11:20:43.554Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:20:45.061Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:22:39.256Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:23:51.923Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:24:06.657Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:24:19.237Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:26:07.173Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:26:08.683Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:26:24.577Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:26:26.083Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:27:13.032Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:34:07.996Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:36:22.988Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:36:24.497Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:38:11.716Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:38:59.654Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:39:02.059Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:39:03.567Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:39:05.076Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:39:06.580Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:39:08.085Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:39:09.593Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:39:48.021Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:40:37.829Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:42:09.947Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:42:43.720Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:43:41.083Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:44:24.053Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:44:45.597Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:06.157Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:12.327Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:13.832Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:14.906Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:15.340Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:16.419Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:16.848Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:17.926Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:18.352Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:19.434Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:19.861Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:20.420Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:20.940Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:21.366Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:21.929Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:22.446Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:22.873Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:23.954Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:24.380Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:25.461Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:25.888Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:26.968Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:27.400Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:28.475Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:28.905Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:29.982Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:30.412Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:31.489Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:31.919Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:32.995Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:33.425Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:34.501Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:34.932Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:36.008Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:36.438Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:37.514Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:37.944Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:39.020Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:39.451Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:40.528Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:40.957Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:42.603Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:42.604Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:44.601Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:44.602Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:46.601Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:46.603Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:48.601Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:48.602Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:50.600Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:50.601Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:52.601Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:52.602Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:54.601Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:54.602Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:56.600Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:56.601Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:58.601Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:45:58.603Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:00.600Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:00.601Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:02.601Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:02.602Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:04.603Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:04.601Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:06.601Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:06.603Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:08.602Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:08.603Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:10.602Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:10.604Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:12.603Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:12.604Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:14.601Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:14.602Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:16.602Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:16.603Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:18.599Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:18.600Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:20.602Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:20.603Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:22.600Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:46:24.600Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:50:14.375Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:50:15.885Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:50:17.124Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:50:21.886Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:50:26.920Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:50:28.430Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:50:29.937Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:52:44.277Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:53:45.713Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:53:50.264Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:53:51.777Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:53:53.285Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:53:56.610Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:53:58.118Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:54:01.521Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:54:03.028Z  ReferenceError: pkcs11 is not defined
+2025-11-27T11:54:04.940Z  ReferenceError: pkcs11 is not defined

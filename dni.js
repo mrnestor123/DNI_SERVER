@@ -47,7 +47,6 @@ function getDNI(){
 
 function findPadron(dni, modelo = 1){
 
-    console.log('MODELO', modelo)
     
     const wsdlUrl = 'https://etributa.alcasser.es:8643/epadronws/services/CertificadoEmpadronamientoPort?wsdl';
     const soapRequest = `
@@ -83,6 +82,120 @@ function findPadron(dni, modelo = 1){
     })
 }
 
-module.exports = { getDNI, findPadron }
+
+let token = '';
+
+// document could be DNI, NIE, PASSPORT
+//
+// encontrar padron desde digitalvalue
+async function DVfindPadron(dni, modelo = 1, options={realm:'requena', document: 'DNI', birthDate: null}){
+        
+    let realmsINE = {
+        'requena': {
+            ine: '46213',
+            province: '46'
+        }
+    }
+
+    let data = {
+        "username": "RequenaDV",
+        "password":"RequenaDVdm5F6]w5dx16",
+        "grant_type":"password",
+        "scope":"Interpublica",
+        "client_id":"Interpublica",
+        "client_secret":"C893EA72-CA50-475E-BC55-161D1557FE5F"
+    }
+
+    const formBody = Object.keys(data)
+        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+        .join('&');
+
+    // Sacamos el token, esto debería de ser cacheado hasta que caduque !!
+    let res = await fetch(`https://interpublicaauthorization.dival.es/identity/connect/token`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+        },
+        body: formBody,
+    })
+    .then(response => response.json())
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+
+
+    console.log('RES', res )
+
+    if(res && res.error){
+        throw Error('Error obteniendo el token')
+    }
+
+    //let padronUrl = "https://pre-interpublicaapi.interpublica.es/api/padron/certificadoindemppdf";
+    // Construir query params igual que en PHP: filtros[0].Nombre, filtros[0].Valor, etc.
+    let query = {
+        "filtros[0].Nombre": "NumDocumento",
+        "filtros[0].Valor": dni, // cambiar otro nombre
+        "filtros[1].Nombre": "TipoPlantillaPadron",
+        "filtros[1].Valor": 11,
+        "filtros[2].Nombre":"TipoDocumentoIne",
+        "filtros[2].Valor": options?.document == 'Pasaporte'? 2 
+            : options?.document == 'NIE' ? 12
+            : 1,
+    }
+    
+    let apiURL ='https://interpublicaapi.dival.es/api/padron';
+
+
+
+    // familiar
+    if(modelo == 1){
+        apiURL += '/certificadoindemppdf'
+        //query[] = 11
+    }
+    if(modelo == 2){
+        apiURL += '/certificadocolectindpdf'
+        query["filtros[1].Valor"] = 17
+    } else if(modelo == 4){ // histórico
+        apiURL += '/certificadohistindemppdf'
+        query["filtros[1].Valor"] = 16
+    }
+
+
+    // Convertir a query string
+    const queryString = Object.keys(query)
+        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(query[key]))
+        .join('&');
+
+    let padron = await fetch(apiURL + '?' + queryString, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${res.access_token}`,
+        }
+    })
+    .then(response => response.arrayBuffer()) // Obtener como ArrayBuffer para datos binarios
+    .then(buffer => {
+        // Convertir ArrayBuffer a Base64
+        const bytes = new Uint8Array(buffer);
+        let binary = '';
+        for (let i = 0; i < bytes.length; i++) {
+            binary += String.fromCharCode(bytes[i]);
+        }
+        return btoa(binary); // Convertir a Base64
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+
+
+
+
+    return padron;
+
+
+}
+
+
+
+module.exports = { getDNI, findPadron, DVfindPadron }
 
 
