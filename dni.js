@@ -1,6 +1,14 @@
-//const pkcs11js = require('pkcs11js');
-//const pkcs11 = new pkcs11js.PKCS11();
-//pkcs11.load('/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so');
+const pkcs11js = require('pkcs11js');
+const pkcs11 = new pkcs11js.PKCS11();
+
+
+let mac = true;
+
+if(mac){
+    pkcs11.load('/Library/Libpkcs11-dnie/lib/libpkcs11-dnie.so');
+} else {
+    pkcs11.load('/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so');
+}
 
 let attempt = 0;
 
@@ -10,16 +18,23 @@ function getDNI(){
 
     attempt++;
 
-    const slotList = pkcs11.C_GetSlotList(true);
+    // Getting info about PKCS11 Module
+    var module_info = pkcs11.C_GetInfo();
+
+    console.log('info', module_info)
+
+    const slotList = pkcs11.C_GetSlotList(false);
+
+    console.log('slotList', slotList)
+    
     const session = pkcs11.C_OpenSession(slotList[0], pkcs11js.CKF_SERIAL_SESSION);
     
     pkcs11.C_FindObjectsInit(session, [{ type: pkcs11js.CKA_CLASS, value: pkcs11js.CKO_CERTIFICATE }]);
 
-
     const hObject = pkcs11.C_FindObjects(session);
 
-
     if (hObject) {
+        
         const attrs = pkcs11.C_GetAttributeValue(session, hObject, [
             { type: pkcs11js.CKA_SUBJECT },
         ]);
@@ -39,7 +54,11 @@ function getDNI(){
         pkcs11.C_Finalize();
         attempt = 0;
 
-        return {'dni':dni, 'name': name && name.trim(), 'surname': surname && surname.trim()}
+        return {
+            'dni':dni, 
+            'name': name && name.trim(), 
+            'surname': surname && surname.trim()
+        }
     } else {
         throw Error()
     } 
@@ -85,49 +104,36 @@ function findPadron(dni, modelo = 1){
 
 let token = '';
 
+
 // document could be DNI, NIE, PASSPORT
 //
 // encontrar padron desde digitalvalue
 async function DVfindPadron(dni, modelo = 1, options={realm:'requena', document: 'DNI', birthDate: null}){
         
-    let realmsINE = {
-        'requena': {
-            ine: '46213',
-            province: '46'
-        }
+    let access_token = await getToken()
+    
+    if(!access_token){
+        throw Error('Error obteniendo el token')
     }
+
+    let apiOESIA = 'https://interpublicaapi.dival.es/api/padron' 
 
     let docTypes ={
         'DNI': 1,
         'Pasaporte': 5,
         'NIE': 4
     }
-    
-   let access_token = await getToken()
-    
-    if(!access_token){
-        throw Error('Error obteniendo el token')
-    }
 
-    /*
-    let apiCheckPadron ='https://interpublicaapi.dival.es/api/padron/residenteempadronado';
-
-    let checkQuery = {
+    let checkQueryString = encodeData({
         "filtros[0].Nombre": "NumDocumento",
         "filtros[0].Valor": dni, // cambiar otro nombre
         "filtros[1].Nombre": "FechaNacimiento",
-        "filtros[1].Valor": options?.birthDate ? options.birthDate : '',
+        "filtros[1].Valor": options?.birthDate ? options.birthDate : '1997-09-15',
         "filtros[2].Nombre": "TipoDocumento",
         "filtros[2].Valor": docTypes[options?.document || 'DNI'],
-    }
+    })
 
-
-    // Convertir a query string
-    const checkQueryString = Object.keys(checkQuery)
-        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(checkQuery[key]))
-        .join('&');
-
-    await fetch(apiCheckPadron + '?' + checkQueryString, {
+    await fetch(`${apiOESIA}/residenteempadronado?${checkQueryString}`, {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${access_token}`,
@@ -142,30 +148,12 @@ async function DVfindPadron(dni, modelo = 1, options={realm:'requena', document:
         } else {
             throw Error('No empadronado')
         }
-    })*/
-
-
-
+    })
     
 
-    //let padronUrl = "https://pre-interpublicaapi.interpublica.es/api/padron/certificadoindemppdf";
-    // Construir query params igual que en PHP: filtros[0].Nombre, filtros[0].Valor, etc.
-    let query = {
-        "filtros[0].Nombre": "NumDocumento",
-        "filtros[0].Valor": dni, // cambiar otro nombre
-        "filtros[1].Nombre": "TipoPlantillaPadron",
-        "filtros[1].Valor": 11,
-        "filtros[2].Nombre":"TipoDocumentoIne",
-        "filtros[2].Valor": options?.document == 'Pasaporte'? 2 
-            : options?.document == 'NIE' ? 12
-            : 1,
-    }
     
-    let apiURL ='https://interpublicaapi.dival.es/api/padron';
-
-
-
     // normal
+    /*
     if(modelo == 1){
         apiURL += '/certificadoindemppdf'
         //query[] = 11
@@ -176,15 +164,21 @@ async function DVfindPadron(dni, modelo = 1, options={realm:'requena', document:
     } else if(modelo == 4){ // histórico
         apiURL += '/certificadohistindemppdf'
         query["filtros[1].Valor"] = 16
-    }
+    }*/
 
 
-    // Convertir a query string
-    const queryString = Object.keys(query)
-        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(query[key]))
-        .join('&');
+    let queryString = encodeData({
+        "filtros[0].Nombre": "NumDocumento",
+        "filtros[0].Valor": dni, // cambiar otro nombre
+        "filtros[1].Nombre": "TipoPlantillaPadron",
+        "filtros[1].Valor": 11,
+        "filtros[2].Nombre":"TipoDocumentoIne",
+        "filtros[2].Valor": options?.document == 'Pasaporte'? 2 
+            : options?.document == 'NIE' ? 12
+            : 1,
+    })
 
-    let padron = await fetch(apiURL + '?' + queryString, {
+    let padron = await fetch(`${apiOESIA}/certificadoindemppdf?` + queryString, {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${access_token}`,
@@ -192,7 +186,6 @@ async function DVfindPadron(dni, modelo = 1, options={realm:'requena', document:
     })
     .then(response => response.arrayBuffer()) // Obtener como ArrayBuffer para datos binarios
     .then(buffer => {
-        console.log('buffer', buffer)
         // Convertir ArrayBuffer a Base64
         const bytes = new Uint8Array(buffer);
         let binary = '';
@@ -214,34 +207,36 @@ async function DVfindPadron(dni, modelo = 1, options={realm:'requena', document:
 
 async function getToken() {
 
-    let data = {
-        "username": "RequenaDV",
-        "password":"RequenaDVdm5F6]w5dx16",
-        "grant_type":"password",
-        "scope":"Interpublica",
-        "client_id":"Interpublica",
-        "client_secret":"C893EA72-CA50-475E-BC55-161D1557FE5F"
-    }
-
-    const formBody = Object.keys(data)
-        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-        .join('&');
-
-    // Sacamos el token, esto debería de ser cacheado hasta que caduque !!
+    // se podría sacar solo una vez ??
     let res = await fetch(`https://interpublicaauthorization.dival.es/identity/connect/token`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
         },
-        body: formBody,
+        body: encodeData({
+            "username": "RequenaDV",
+            "password":"RequenaDVdm5F6]w5dx16",
+            "grant_type":"password",
+            "scope":"Interpublica",
+            "client_id":"Interpublica",
+            "client_secret":"C893EA72-CA50-475E-BC55-161D1557FE5F"
+        }),
     })
     .then(response => response.json())
     .catch((error) => {
         console.error('Error:', error);
     });
 
-    return res.access_token;
+    return res?.access_token;
+}
 
+
+function encodeData(data){
+
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+        .join('&');
+    
 }
 
 

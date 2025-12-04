@@ -39,6 +39,7 @@ app.get('/dni/check', (req,res)=>{
         let data = getDNI()
         res.status(200).json(data)
     } catch(e){
+        console.log('errorDNI', e)
         logError(e && e.toString())
         res.status(400).json({error:'no se ha encontrado el dni'})
     }

@@ -251,3 +251,45 @@
 2025-12-02T10:24:30.965Z  ReferenceError: pkcs11 is not defined
 2025-12-02T10:24:32.470Z  ReferenceError: pkcs11 is not defined
 2025-12-02T10:24:33.977Z  ReferenceError: pkcs11 is not defined
+2025-12-04T10:19:33.152Z  ReferenceError: pkcs11 is not defined
+2025-12-04T10:19:34.668Z  ReferenceError: pkcs11 is not defined
+2025-12-04T10:19:36.217Z  ReferenceError: pkcs11 is not defined
+2025-12-04T10:19:37.734Z  ReferenceError: pkcs11 is not defined
+2025-12-04T10:19:40.652Z  ReferenceError: pkcs11 is not defined
+2025-12-04T10:19:42.162Z  ReferenceError: pkcs11 is not defined
+2025-12-04T10:19:43.591Z  ReferenceError: pkcs11 is not defined
+2025-12-04T10:19:45.100Z  ReferenceError: pkcs11 is not defined
+2025-12-04T10:19:47.244Z  ReferenceError: pkcs11 is not defined
+2025-12-04T10:19:49.243Z  ReferenceError: pkcs11 is not defined
+2025-12-04T10:19:51.243Z  ReferenceError: pkcs11 is not defined
+2025-12-04T10:19:53.245Z  ReferenceError: pkcs11 is not defined
+2025-12-04T10:19:55.244Z  ReferenceError: pkcs11 is not defined
+2025-12-04T10:19:57.243Z  ReferenceError: pkcs11 is not defined
+2025-12-04T10:20:01.935Z  Error: No empadronado
+2025-12-04T10:20:04.424Z  Error: No empadronado
+2025-12-04T10:20:07.634Z  Error: No empadronado
+2025-12-04T10:29:31.664Z  Error: No empadronado
+2025-12-04T10:29:34.166Z  Error: No empadronado
+2025-12-04T10:29:36.615Z  Error: No empadronado
+2025-12-04T10:29:39.652Z  Error: No empadronado
+2025-12-04T10:29:57.415Z  Error: No empadronado
+2025-12-04T10:30:00.758Z  Error: No empadronado
+2025-12-04T10:30:03.974Z  Error: No empadronado
+2025-12-04T10:30:07.311Z  Error: No empadronado
+2025-12-04T10:30:49.539Z  Error: No empadronado
+2025-12-04T10:30:52.870Z  Error: No empadronado
+2025-12-04T10:30:55.875Z  Error: No empadronado
+2025-12-04T10:30:58.500Z  Error: No empadronado
+2025-12-04T11:19:14.404Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-04T11:19:20.567Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-04T11:19:22.334Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-04T11:19:23.464Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-04T11:19:26.641Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-04T11:19:46.886Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-04T11:20:01.237Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-04T11:20:02.671Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-04T11:20:03.677Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-04T11:20:34.558Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-04T11:23:01.918Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-04T11:24:40.431Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-04T11:25:33.753Z  TypeError: Argument 0 has wrong type. Should be a Buffer
