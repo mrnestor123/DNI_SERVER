@@ -3,17 +3,11 @@
 const express = require('express');
 const app = express();
 const { getDNI, findPadron, DVfindPadron} = require('./dni');
-
 const {
     getCompletedQueue,
     getNotCompletedQueue,
     getPrinterNames,
-    getPrinterOptions,
-    getAllPrinterOptions,
-    printBuffer,
-    printFile,
-    cancelAllJobs,
-    cancelJob,
+    getPrinterOptions
 } = require("node-cups");
 
 var fs = require('fs');
@@ -28,7 +22,8 @@ const corsOpt = {
         'http://localhost:5500', 'localhost:5500', 
         '127.0.1.1:5500', 
         'https://public.digitalvalue.es',
-        'http://localhost:8086'
+        'http://localhost:8086',
+        'http://localhost:8087'
     ], 
     methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'], 
     allowedHeaders: ['Content-Type', 'Authorization'] 

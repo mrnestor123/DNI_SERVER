@@ -97,6 +97,123 @@ async function DVfindPadron(dni, modelo = 1, options={realm:'requena', document:
         }
     }
 
+    let docTypes ={
+        'DNI': 1,
+        'Pasaporte': 5,
+        'NIE': 4
+    }
+    
+   let access_token = await getToken()
+    
+    if(!access_token){
+        throw Error('Error obteniendo el token')
+    }
+
+    /*
+    let apiCheckPadron ='https://interpublicaapi.dival.es/api/padron/residenteempadronado';
+
+    let checkQuery = {
+        "filtros[0].Nombre": "NumDocumento",
+        "filtros[0].Valor": dni, // cambiar otro nombre
+        "filtros[1].Nombre": "FechaNacimiento",
+        "filtros[1].Valor": options?.birthDate ? options.birthDate : '',
+        "filtros[2].Nombre": "TipoDocumento",
+        "filtros[2].Valor": docTypes[options?.document || 'DNI'],
+    }
+
+
+    // Convertir a query string
+    const checkQueryString = Object.keys(checkQuery)
+        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(checkQuery[key]))
+        .join('&');
+
+    await fetch(apiCheckPadron + '?' + checkQueryString, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${access_token}`,
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('DATA', data)
+
+        if(data == 'True'){
+            return true;
+        } else {
+            throw Error('No empadronado')
+        }
+    })*/
+
+
+
+    
+
+    //let padronUrl = "https://pre-interpublicaapi.interpublica.es/api/padron/certificadoindemppdf";
+    // Construir query params igual que en PHP: filtros[0].Nombre, filtros[0].Valor, etc.
+    let query = {
+        "filtros[0].Nombre": "NumDocumento",
+        "filtros[0].Valor": dni, // cambiar otro nombre
+        "filtros[1].Nombre": "TipoPlantillaPadron",
+        "filtros[1].Valor": 11,
+        "filtros[2].Nombre":"TipoDocumentoIne",
+        "filtros[2].Valor": options?.document == 'Pasaporte'? 2 
+            : options?.document == 'NIE' ? 12
+            : 1,
+    }
+    
+    let apiURL ='https://interpublicaapi.dival.es/api/padron';
+
+
+
+    // normal
+    if(modelo == 1){
+        apiURL += '/certificadoindemppdf'
+        //query[] = 11
+    }
+    if(modelo == 2){
+        apiURL += '/certificadocolectindpdf'
+        query["filtros[1].Valor"] = 17
+    } else if(modelo == 4){ // histórico
+        apiURL += '/certificadohistindemppdf'
+        query["filtros[1].Valor"] = 16
+    }
+
+
+    // Convertir a query string
+    const queryString = Object.keys(query)
+        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(query[key]))
+        .join('&');
+
+    let padron = await fetch(apiURL + '?' + queryString, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${access_token}`,
+        }
+    })
+    .then(response => response.arrayBuffer()) // Obtener como ArrayBuffer para datos binarios
+    .then(buffer => {
+        console.log('buffer', buffer)
+        // Convertir ArrayBuffer a Base64
+        const bytes = new Uint8Array(buffer);
+        let binary = '';
+        for (let i = 0; i < bytes.length; i++) {
+            binary += String.fromCharCode(bytes[i]);
+        }
+        return btoa(binary); // Convertir a Base64
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+
+
+    return padron;
+
+
+}
+
+
+async function getToken() {
+
     let data = {
         "username": "RequenaDV",
         "password":"RequenaDVdm5F6]w5dx16",
@@ -123,76 +240,12 @@ async function DVfindPadron(dni, modelo = 1, options={realm:'requena', document:
         console.error('Error:', error);
     });
 
-
-    console.log('RES', res )
-
-    if(res && res.error){
-        throw Error('Error obteniendo el token')
-    }
-
-    //let padronUrl = "https://pre-interpublicaapi.interpublica.es/api/padron/certificadoindemppdf";
-    // Construir query params igual que en PHP: filtros[0].Nombre, filtros[0].Valor, etc.
-    let query = {
-        "filtros[0].Nombre": "NumDocumento",
-        "filtros[0].Valor": dni, // cambiar otro nombre
-        "filtros[1].Nombre": "TipoPlantillaPadron",
-        "filtros[1].Valor": 11,
-        "filtros[2].Nombre":"TipoDocumentoIne",
-        "filtros[2].Valor": options?.document == 'Pasaporte'? 2 
-            : options?.document == 'NIE' ? 12
-            : 1,
-    }
-    
-    let apiURL ='https://interpublicaapi.dival.es/api/padron';
-
-
-
-    // familiar
-    if(modelo == 1){
-        apiURL += '/certificadoindemppdf'
-        //query[] = 11
-    }
-    if(modelo == 2){
-        apiURL += '/certificadocolectindpdf'
-        query["filtros[1].Valor"] = 17
-    } else if(modelo == 4){ // histórico
-        apiURL += '/certificadohistindemppdf'
-        query["filtros[1].Valor"] = 16
-    }
-
-
-    // Convertir a query string
-    const queryString = Object.keys(query)
-        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(query[key]))
-        .join('&');
-
-    let padron = await fetch(apiURL + '?' + queryString, {
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${res.access_token}`,
-        }
-    })
-    .then(response => response.arrayBuffer()) // Obtener como ArrayBuffer para datos binarios
-    .then(buffer => {
-        // Convertir ArrayBuffer a Base64
-        const bytes = new Uint8Array(buffer);
-        let binary = '';
-        for (let i = 0; i < bytes.length; i++) {
-            binary += String.fromCharCode(bytes[i]);
-        }
-        return btoa(binary); // Convertir a Base64
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
-
-
-
-
-    return padron;
-
+    return res.access_token;
 
 }
+
+
+// debería de comprobar el token solo una vez?
 
 
 
