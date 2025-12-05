@@ -53,9 +53,9 @@ app.get('/dni/search/:dni', async (req,res)=>{
         console.log('params', req.params, req.query, req.query.realm)
         
         if(req.query?.realm && req.query.realm !='alcasser'){
-            padron = await DVfindPadron(req.params.dni, req.query.model, {realm: req.query?.realm}) 
+            padron = await DVfindPadron(req.params.dni, req.query.model, {realm: req.query?.realm, birthDate: req.query.birthDate, document: req.query.document}) 
         } else {
-            padron = await findPadron(req.params.dni, req.query.model, {realm: req.query?.realm, birthDate: req.query.birthDate, document: req.query.document})
+            padron = await findPadron(req.params.dni, req.query.model, {realm: req.query?.realm})
         } 
 
         res.status(200).json(padron)
