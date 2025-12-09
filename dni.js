@@ -14,7 +14,14 @@ let attempt = 0;
 
 function getDNI(){
 
-    if(attempt == 0){ pkcs11.C_Initialize();}
+    try {
+        if(attempt == 0){ 
+            pkcs11.C_Initialize();
+        }
+    } catch (error) {
+        console.error('Initialize error:', error);
+        throw error;
+    }
 
     attempt++;
 
@@ -24,14 +31,72 @@ function getDNI(){
     console.log('info', module_info)
 
     const slotList = pkcs11.C_GetSlotList(false);
-
     console.log('slotList', slotList)
     
-    const session = pkcs11.C_OpenSession(slotList[0], pkcs11js.CKF_SERIAL_SESSION);
+    if (slotList.length === 0) {
+        throw new Error('No slots found');
+    }
     
-    pkcs11.C_FindObjectsInit(session, [{ type: pkcs11js.CKA_CLASS, value: pkcs11js.CKO_CERTIFICATE }]);
+    // Verificar información del token antes de abrir sesión
+    try {
+        const slotInfo = pkcs11.C_GetSlotInfo(slotList[0]);
+        console.log('Slot info:', slotInfo);
+        
+        const tokenInfo = pkcs11.C_GetTokenInfo(slotList[0]);
+        console.log('Token info:', tokenInfo);
+    } catch (error) {
+        console.error('Error getting slot/token info:', error);
+        throw new Error(`Token not ready: ${error.message}`);
+    }
+    
+    let session;
+    try {
+        console.log('Opening session...');
+        session = pkcs11.C_OpenSession(slotList[0], pkcs11js.CKF_SERIAL_SESSION);
+        console.log('Session opened successfully:', session);
+    } catch (error) {
+        console.error('Error opening session:', error);
+        throw error;
+    }
+    
+    // Buscar certificados públicos (no requieren PIN para leer)
+    let objects = [];
+    try {
+        console.log('Initializing certificate search...');
+        pkcs11.C_FindObjectsInit(session, [
+            { type: pkcs11js.CKA_CLASS, value: pkcs11js.CKO_CERTIFICATE },
+            { type: pkcs11js.CKA_TOKEN, value: true },
+            { type: pkcs11js.CKA_PRIVATE, value: false }
+        ]);
 
-    const hObject = pkcs11.C_FindObjects(session);
+        objects = pkcs11.C_FindObjects(session, 10);
+        pkcs11.C_FindObjectsFini(session);
+        
+        console.log(`Found ${objects.length} public certificates`);
+    } catch (error) {
+        console.error('Error searching certificates:', error);
+        pkcs11.C_CloseSession(session);
+        throw error;
+    }
+    
+    let hObject = null;
+    if (objects && objects.length > 0) {
+        // Probar cada certificado hasta encontrar uno válido
+        for (let obj of objects) {
+            try {
+                const testAttrs = pkcs11.C_GetAttributeValue(session, obj, [
+                    { type: pkcs11js.CKA_SUBJECT }
+                ]);
+                if (testAttrs && testAttrs[0] && testAttrs[0].value) {
+                    hObject = obj;
+                    break;
+                }
+            } catch (err) {
+                console.log('Skipping certificate:', err.message);
+                continue;
+            }
+        }
+    }
 
     if (hObject) {
         
@@ -143,9 +208,7 @@ async function DVfindPadron(dni, modelo = 1, options={realm:'requena', document:
     .then(data => {
         console.log('DATA', data)
 
-        if(data == 'True'){
-            return true;
-        } else {
+        if(data != 'True'){
             throw Error('No empadronado')
         }
     })
@@ -197,6 +260,8 @@ async function DVfindPadron(dni, modelo = 1, options={realm:'requena', document:
     .catch((error) => {
         console.error('Error:', error);
     });
+
+    console.log('padron', padron)
 
 
     return padron;
