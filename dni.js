@@ -2,13 +2,9 @@ const pkcs11js = require('pkcs11js');
 const pkcs11 = new pkcs11js.PKCS11();
 
 
-let mac = true;
+pkcs11.load('/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so');
+//pkcs11.load('/usr/lib/libpkcs11-dnie.so');
 
-if(mac){
-    pkcs11.load('/Library/Libpkcs11-dnie/lib/libpkcs11-dnie.so');
-} else {
-    pkcs11.load('/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so');
-}
 
 let attempt = 0;
 
@@ -20,18 +16,59 @@ function getDNI(){
 
     // Getting info about PKCS11 Module
     var module_info = pkcs11.C_GetInfo();
+    
+    const slotList = pkcs11.C_GetSlotList(false);
 
+    
+    try {
+        const slotInfo = pkcs11.C_GetSlotInfo(slotList[0]);
+        console.log('Slot info:', slotInfo);
+        
+        const tokenInfo = pkcs11.C_GetTokenInfo(slotList[0]);
+        console.log('Token info:', tokenInfo);
+    } catch (error) {
+        console.error('Error getting slot/token info:', error);
+        throw new Error(`Token not ready: ${error.message}`);
+    }
+    
     console.log('info', module_info)
 
-    const slotList = pkcs11.C_GetSlotList(false);
+    slotList = pkcs11.C_GetSlotList(false);
 
     console.log('slotList', slotList)
     
     const session = pkcs11.C_OpenSession(slotList[0], pkcs11js.CKF_SERIAL_SESSION);
     
-    pkcs11.C_FindObjectsInit(session, [{ type: pkcs11js.CKA_CLASS, value: pkcs11js.CKO_CERTIFICATE }]);
+    // Buscar certificados públicos (no requieren PIN para leer)
+    pkcs11.C_FindObjectsInit(session, [
+        { type: pkcs11js.CKA_CLASS, value: pkcs11js.CKO_CERTIFICATE },
+        { type: pkcs11js.CKA_TOKEN, value: true },
+        { type: pkcs11js.CKA_PRIVATE, value: false }
+    ]);
 
-    const hObject = pkcs11.C_FindObjects(session);
+    const objects = pkcs11.C_FindObjects(session, 10);
+    pkcs11.C_FindObjectsFini(session);
+    
+    console.log(`Found ${objects.length} public certificates`);
+    
+    let hObject = null;
+    if (objects && objects.length > 0) {
+        // Probar cada certificado hasta encontrar uno válido
+        for (let obj of objects) {
+            try {
+                const testAttrs = pkcs11.C_GetAttributeValue(session, obj, [
+                    { type: pkcs11js.CKA_SUBJECT }
+                ]);
+                if (testAttrs && testAttrs[0] && testAttrs[0].value) {
+                    hObject = obj;
+                    break;
+                }
+            } catch (err) {
+                console.log('Skipping certificate:', err.message);
+                continue;
+            }
+        }
+    }
 
     if (hObject) {
         
@@ -63,6 +100,9 @@ function getDNI(){
         throw Error()
     } 
 }
+
+
+
 
 function findPadron(dni, modelo = 1){
 
@@ -236,7 +276,7 @@ function encodeData(data){
     return Object.keys(data)
         .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
         .join('&');
-    
+
 }
 
 
