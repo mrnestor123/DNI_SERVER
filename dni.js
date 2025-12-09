@@ -2,97 +2,33 @@ const pkcs11js = require('pkcs11js');
 const pkcs11 = new pkcs11js.PKCS11();
 
 
-pkcs11.load('/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so');
-//pkcs11.load('/usr/lib/libpkcs11-dnie.so');
+//pkcs11.load('/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so');
+pkcs11.load('/usr/lib/libpkcs11-dnie.so');
 
 
 let attempt = 0;
 
+
 function getDNI(){
 
-    try {
-        if(attempt == 0){ 
-            pkcs11.C_Initialize();
-        }
-    } catch (error) {
-        console.error('Initialize error:', error);
-        throw error;
-    }
+    if(attempt == 0){ pkcs11.C_Initialize();}
 
     attempt++;
 
     // Getting info about PKCS11 Module
     var module_info = pkcs11.C_GetInfo();
+
     console.log('info', module_info)
 
     const slotList = pkcs11.C_GetSlotList(false);
+
     console.log('slotList', slotList)
     
-    if (slotList.length === 0) {
-        throw new Error('No slots found');
-    }
-
-    // Convertir slot ID a Buffer si es necesario
-    const slotId = Buffer.isBuffer(slotList[0]) ? slotList[0] : Buffer.from([slotList[0]]);
-
-    try {
-        const slotInfo = pkcs11.C_GetSlotInfo(slotId);
-        console.log('Slot info:', slotInfo);
-        
-        const tokenInfo = pkcs11.C_GetTokenInfo(slotId);
-        console.log('Token info:', tokenInfo);
-    } catch (error) {
-        console.error('Error getting slot/token info:', error);
-        throw new Error(`Token not ready: ${error.message}`);
-    }
+    const session = pkcs11.C_OpenSession(slotList[0], pkcs11js.CKF_SERIAL_SESSION);
     
-    // Abrir sesión con el slotId correcto
-    let session;
-    try {
-        console.log('Opening session...');
-        session = pkcs11.C_OpenSession(slotId, pkcs11js.CKF_SERIAL_SESSION);
-        console.log('Session opened successfully:', session);
-    } catch (error) {
-        console.error('Error opening session:', error);
-        throw error;
-    }
-    
-    // Buscar certificados públicos (no requieren PIN para leer)
-    let objects = [];
-    try {
-        console.log('Initializing certificate search...');
-        pkcs11.C_FindObjectsInit(session, [
-        { type: pkcs11js.CKA_CLASS, value: pkcs11js.CKO_CERTIFICATE },
-        { type: pkcs11js.CKA_TOKEN, value: true },
-        { type: pkcs11js.CKA_PRIVATE, value: false }
-        ]);
+    pkcs11.C_FindObjectsInit(session, [{ type: pkcs11js.CKA_CLASS, value: pkcs11js.CKO_CERTIFICATE }]);
 
-        objects = pkcs11.C_FindObjects(session, 10);
-        pkcs11.C_FindObjectsFini(session);
-        
-        console.log(`Found ${objects.length} public certificates`);
-    } catch (error) {
-        console.error('Error searching certificates:', error);
-        pkcs11.C_CloseSession(session);
-        throw error;
-    }    let hObject = null;
-    if (objects && objects.length > 0) {
-        // Probar cada certificado hasta encontrar uno válido
-        for (let obj of objects) {
-            try {
-                const testAttrs = pkcs11.C_GetAttributeValue(session, obj, [
-                    { type: pkcs11js.CKA_SUBJECT }
-                ]);
-                if (testAttrs && testAttrs[0] && testAttrs[0].value) {
-                    hObject = obj;
-                    break;
-                }
-            } catch (err) {
-                console.log('Skipping certificate:', err.message);
-                continue;
-            }
-        }
-    }
+    const hObject = pkcs11.C_FindObjects(session);
 
     if (hObject) {
         
