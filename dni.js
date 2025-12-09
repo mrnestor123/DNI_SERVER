@@ -26,7 +26,6 @@ function getDNI(){
     
     const slotList = pkcs11.C_GetSlotList(false);
 
-    
     try {
         const slotInfo = pkcs11.C_GetSlotInfo(slotList[0]);
         console.log('Slot info:', slotInfo);
@@ -40,19 +39,14 @@ function getDNI(){
     
     console.log('info', module_info)
 
-<<<<<<< HEAD
     slotList = pkcs11.C_GetSlotList(false);
 
-=======
-    const slotList = pkcs11.C_GetSlotList(false);
->>>>>>> 5e41140fb4faa1f8a47f5c112dc67bd2f126d932
     console.log('slotList', slotList)
     
     if (slotList.length === 0) {
         throw new Error('No slots found');
     }
     
-<<<<<<< HEAD
     // Buscar certificados públicos (no requieren PIN para leer)
     pkcs11.C_FindObjectsInit(session, [
         { type: pkcs11js.CKA_CLASS, value: pkcs11js.CKO_CERTIFICATE },
@@ -64,49 +58,6 @@ function getDNI(){
     pkcs11.C_FindObjectsFini(session);
     
     console.log(`Found ${objects.length} public certificates`);
-=======
-    // Verificar información del token antes de abrir sesión
-    try {
-        const slotInfo = pkcs11.C_GetSlotInfo(slotList[0]);
-        console.log('Slot info:', slotInfo);
-        
-        const tokenInfo = pkcs11.C_GetTokenInfo(slotList[0]);
-        console.log('Token info:', tokenInfo);
-    } catch (error) {
-        console.error('Error getting slot/token info:', error);
-        throw new Error(`Token not ready: ${error.message}`);
-    }
-    
-    let session;
-    try {
-        console.log('Opening session...');
-        session = pkcs11.C_OpenSession(slotList[0], pkcs11js.CKF_SERIAL_SESSION);
-        console.log('Session opened successfully:', session);
-    } catch (error) {
-        console.error('Error opening session:', error);
-        throw error;
-    }
-    
-    // Buscar certificados públicos (no requieren PIN para leer)
-    let objects = [];
-    try {
-        console.log('Initializing certificate search...');
-        pkcs11.C_FindObjectsInit(session, [
-            { type: pkcs11js.CKA_CLASS, value: pkcs11js.CKO_CERTIFICATE },
-            { type: pkcs11js.CKA_TOKEN, value: true },
-            { type: pkcs11js.CKA_PRIVATE, value: false }
-        ]);
-
-        objects = pkcs11.C_FindObjects(session, 10);
-        pkcs11.C_FindObjectsFini(session);
-        
-        console.log(`Found ${objects.length} public certificates`);
-    } catch (error) {
-        console.error('Error searching certificates:', error);
-        pkcs11.C_CloseSession(session);
-        throw error;
-    }
->>>>>>> 5e41140fb4faa1f8a47f5c112dc67bd2f126d932
     
     let hObject = null;
     if (objects && objects.length > 0) {
