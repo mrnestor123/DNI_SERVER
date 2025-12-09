@@ -2483,6 +2483,7 @@
 2025-12-04T14:01:19.960Z  TypeError: Argument 0 has wrong type. Should be a Buffer
 2025-12-04T14:01:21.467Z  TypeError: Argument 0 has wrong type. Should be a Buffer
 2025-12-04T14:01:23.254Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+<<<<<<< HEAD
 2025-12-05T12:39:32.270Z  TypeError: Argument 0 has wrong type. Should be a Buffer
 2025-12-05T12:39:33.786Z  TypeError: Argument 0 has wrong type. Should be a Buffer
 2025-12-05T12:39:35.324Z  TypeError: Argument 0 has wrong type. Should be a Buffer
@@ -2948,3 +2949,63 @@
 2025-12-09T11:13:40.063Z  Error: Token not ready: Cannot access 'slotList' before initialization
 2025-12-09T11:15:26.204Z  TypeError: pkcs11.c_GetSlotList is not a function
 2025-12-09T11:15:51.652Z  TypeError: Assignment to constant variable.
+=======
+2025-12-09T09:23:30.328Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:23:31.841Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:24:43.499Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:25:19.013Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:25:20.522Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:25:22.029Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:26:07.265Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:26:08.773Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:26:28.302Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:26:29.812Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:26:31.326Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:28:02.365Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:28:03.872Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:28:32.838Z  Error: No empadronado
+2025-12-09T09:28:35.499Z  Error: No empadronado
+2025-12-09T09:28:37.956Z  Error: No empadronado
+2025-12-09T09:28:40.315Z  Error: No empadronado
+2025-12-09T09:28:58.134Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:28:59.646Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:29:29.428Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:29:30.938Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:29:32.445Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:29:33.952Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:29:35.460Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:29:36.966Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:29:38.472Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:29:51.511Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:29:53.018Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:29:54.524Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:29:56.030Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:29:57.533Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:29:59.040Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:30:00.545Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:30:02.051Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:30:03.558Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:30:08.179Z  Error: No empadronado
+2025-12-09T09:30:09.686Z  Error: No empadronado
+2025-12-09T09:30:10.546Z  Error: No empadronado
+2025-12-09T09:30:12.037Z  Error: No empadronado
+2025-12-09T09:30:12.379Z  Error: No empadronado
+2025-12-09T09:30:12.951Z  Error: No empadronado
+2025-12-09T09:30:14.377Z  Error: No empadronado
+2025-12-09T09:30:14.789Z  Error: No empadronado
+2025-12-09T09:30:16.271Z  Error: No empadronado
+2025-12-09T09:30:17.213Z  Error: No empadronado
+2025-12-09T09:30:17.591Z  Error: No empadronado
+2025-12-09T09:30:20.476Z  Error: No empadronado
+2025-12-09T09:31:13.031Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:31:14.540Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:32:25.929Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:32:27.448Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:32:28.955Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:32:30.463Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:32:31.970Z  TypeError: Argument 0 has wrong type. Should be a Buffer
+2025-12-09T09:32:36.535Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-09T09:32:38.576Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-09T09:32:40.624Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-09T09:32:42.664Z  TypeError: Cannot read properties of null (reading '1')
+>>>>>>> 5e41140fb4faa1f8a47f5c112dc67bd2f126d932
