@@ -3,7 +3,7 @@ const pkcs11 = new pkcs11js.PKCS11();
 
 
 //pkcs11.load('/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so');
-pkcs11.load('/usr/lib/libpkcs11-dnie.so');
+//pkcs11.load('/usr/lib/libpkcs11-dnie.so');
 
 
 let attempt = 0;
@@ -65,8 +65,6 @@ function getDNI(){
 
 
 function findPadron(dni, modelo = 1){
-
-    
     const wsdlUrl = 'https://etributa.alcasser.es:8643/epadronws/services/CertificadoEmpadronamientoPort?wsdl';
     const soapRequest = `
         <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.epadron.ival.com/">
@@ -78,7 +76,6 @@ function findPadron(dni, modelo = 1){
                 </ws:getCertificado>
             </soapenv:Body>
         </soapenv:Envelope>`;
-
 
     return fetch(wsdlUrl, {
         method: 'POST',
@@ -171,7 +168,7 @@ async function DVfindPadron(dni, modelo = 1, options={realm:'requena', document:
         "filtros[1].Nombre": "TipoPlantillaPadron",
         "filtros[1].Valor": 11,
         "filtros[2].Nombre":"TipoDocumentoIne",
-        "filtros[2].Valor": options?.document == 'Pasaporte'? 2 
+        "filtros[2].Valor": options?.document == 'PASSPORT'? 2 
             : options?.document == 'NIE' ? 12
             : 1,
     })

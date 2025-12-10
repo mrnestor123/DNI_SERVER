@@ -49,8 +49,6 @@ app.get('/dni/check', (req,res)=>{
 app.get('/dni/search/:dni', async (req,res)=>{
     try {
         let padron;
-
-        console.log('params', req.params, req.query, req.query.realm)
         
         if(req.query?.realm && req.query.realm !='alcasser'){
             padron = await DVfindPadron(req.params.dni, req.query.model, {realm: req.query?.realm, birthDate: req.query.birthDate, document: req.query.document}) 
@@ -59,15 +57,14 @@ app.get('/dni/search/:dni', async (req,res)=>{
         } 
 
         res.status(200).json(padron)
-    } catch(e){
-        console.log('errror', e)
+    } catch(e) {
         logError(e && e.toString())
         res.status(400).json({error: 'No se ha encontrado el padron con este dni'})
     }
 })
 
+
 function isNow(date){
-    console.log('TIME', date, (new Date().getTime()-new Date(date).getTime())/60000 )
     return ((new Date().getTime()-new Date(date).getTime())/60000) < 3
 }
 
@@ -115,6 +112,7 @@ app.get('/print/cancel', async (req,res)=>{
     }
 })
 
+
 app.get('/print/list', async (req,res)=>{
     try {
         let printerNames = await getPrinterNames();
@@ -125,6 +123,7 @@ app.get('/print/list', async (req,res)=>{
         res.status(400).json({error: 'No se ha encontrado impresoras'})
     }
 })
+
 
 app.get('/print/options', async (req,res)=>{
     try {
@@ -138,6 +137,7 @@ app.get('/print/options', async (req,res)=>{
     }
 })
 
+
 function logError(error) {
     if(error){
         fs.appendFile('info_server.txt', 
@@ -148,6 +148,7 @@ function logError(error) {
         });
     }
 }
+
 
 app.listen(PORT, ()=>{
     console.log('Server is running on port ' + PORT);
