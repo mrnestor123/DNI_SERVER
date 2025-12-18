@@ -3792,3 +3792,484 @@
 2025-12-10T09:54:41.872Z  NativeError: PKCS11 module not loaded yet
 2025-12-10T09:54:46.245Z  NativeError: PKCS11 module not loaded yet
 2025-12-10T09:54:47.751Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:13.893Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:28.542Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:30.050Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:31.559Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:33.065Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:34.572Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:36.078Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:37.586Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:39.092Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:40.598Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:42.105Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:43.613Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:45.119Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:46.626Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:48.133Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:49.639Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:51.144Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:52.649Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:00:54.157Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:01.324Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:02.830Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:04.339Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:05.845Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:07.350Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:08.855Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:10.362Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:11.869Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:13.377Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:14.884Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:16.392Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:17.899Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:19.404Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:20.915Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:22.422Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:23.930Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:25.438Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:26.945Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:28.452Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:29.959Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:31.467Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:32.975Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:34.484Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:35.989Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:37.497Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:39.005Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:40.513Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:42.021Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:43.529Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:45.036Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:46.541Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:48.048Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:49.557Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:51.065Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:52.572Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:54.077Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:55.584Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:57.091Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:01:58.600Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:02:00.109Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:03:29.211Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:03:31.575Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:08:19.061Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:08:20.570Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:08:22.075Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:08:23.582Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:08:25.089Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:08:25.668Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:08:27.733Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:08:29.812Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:08:31.871Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:09:15.861Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:09:17.369Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:09:18.514Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:09:20.591Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:09:22.662Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:09:27.541Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:09:29.047Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:09:30.553Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:09:32.060Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:09:32.526Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:09:34.594Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:09:36.669Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:09:38.723Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:09:40.228Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:09:41.735Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:09:43.240Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:09:44.746Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:09:46.159Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:09:48.229Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:09:51.175Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:09:52.681Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:09:54.190Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:09:55.706Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:09:57.213Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:09:58.724Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:00.232Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:01.740Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:03.247Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:04.754Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:06.262Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:07.770Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:09.276Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:10.784Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:12.291Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:13.799Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:15.306Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:16.814Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:19.492Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:21.000Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:22.510Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:22.911Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:10:24.974Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:10:33.292Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:34.800Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:36.305Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:37.811Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:39.319Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:40.826Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:42.332Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:43.838Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:45.344Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:46.850Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:48.356Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:49.863Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:51.369Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:52.875Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:54.382Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:55.889Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:57.393Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:10:58.900Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:00.407Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:01.912Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:03.419Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:04.926Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:06.432Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:07.939Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:09.444Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:10.950Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:12.456Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:13.962Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:15.468Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:16.974Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:18.478Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:19.985Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:21.491Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:47.624Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:49.131Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:49.614Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:11:52.526Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:54.033Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:55.539Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:57.045Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:11:58.552Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:00.059Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:01.565Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:03.071Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:04.579Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:07.559Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:09.068Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:10.575Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:11.198Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:12:13.271Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:12:14.590Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:16.097Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:17.559Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:19.824Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:21.329Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:22.836Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:24.341Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:25.848Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:27.356Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:28.863Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:30.370Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:31.876Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:33.382Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:34.889Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:36.394Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:37.900Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:12:39.406Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:13:36.578Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:13:38.085Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:13:39.590Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:13:41.097Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:13:41.921Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:13:44.001Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:13:45.808Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:13:47.315Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:13:48.820Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:13:49.702Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:13:51.875Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:13:53.960Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:13:56.049Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:15:11.161Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:15:12.669Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:15:14.172Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:15:15.678Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:15:16.025Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:15:18.086Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:15:20.144Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:15:22.208Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:16:16.178Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:16:17.684Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:16:18.186Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:16:20.244Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:16:22.304Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:16:39.743Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:16:41.252Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:16:42.758Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:16:43.937Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:16:45.996Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:16:48.184Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:16:50.249Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:18:04.329Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:18:05.838Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:18:07.353Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:18:08.755Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:18:10.829Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:18:12.913Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:18:15.034Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:22:17.429Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:22:18.936Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:22:20.441Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:22:21.947Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:32:52.877Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:32:54.384Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:32:57.760Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:00.060Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:01.573Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:03.079Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:04.586Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:06.091Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:07.596Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:09.102Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:10.510Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:10.614Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:12.014Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:12.119Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:13.520Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:13.625Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:15.028Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:15.133Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:15.290Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:33:16.641Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:17.368Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:33:18.149Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:19.437Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:33:19.655Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:21.160Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:21.499Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:33:22.665Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:24.172Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:25.680Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:27.187Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:28.693Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:30.200Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:31.707Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:33.213Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:34.717Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:36.223Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:37.729Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:39.235Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:40.741Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:42.249Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:43.756Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:45.262Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:46.769Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:48.276Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:49.782Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:51.287Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:52.793Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:54.300Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:55.806Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:57.310Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:33:58.816Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:34:02.543Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:34:04.051Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:34:05.558Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:34:06.303Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:34:08.365Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:34:10.431Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:34:12.501Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:34:16.776Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:34:18.791Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:34:20.843Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:34:22.348Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:34:53.096Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:34:54.606Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:34:56.001Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:34:58.068Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:35:00.336Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:35:02.420Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:35:40.574Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:35:42.081Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:35:43.588Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:35:45.093Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:35:46.598Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:35:48.105Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:35:49.610Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:35:51.116Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:35:52.624Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:35:54.129Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:35:55.635Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:35:57.141Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:35:58.646Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:00.152Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:01.660Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:03.168Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:04.674Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:06.180Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:07.685Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:09.192Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:10.698Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:12.203Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:13.709Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:15.216Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:16.722Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:18.229Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:19.735Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:21.241Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:22.747Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:24.253Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:25.760Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:27.266Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:28.773Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:30.280Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:31.787Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:33.293Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:34.797Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:36.303Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:37.810Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:36:39.317Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:19.796Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:21.303Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:23.275Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:24.780Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:26.291Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:27.797Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:29.304Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:30.809Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:32.315Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:34.910Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:36.416Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:37.920Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:39.426Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:40.933Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:42.437Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:43.942Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:45.448Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:46.953Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:48.458Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:49.963Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:51.469Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:52.975Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:54.480Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:55.986Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:57.492Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:39:58.998Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:00.502Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:02.009Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:03.514Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:05.020Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:06.526Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:08.032Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:09.539Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:11.044Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:12.549Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:14.056Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:15.561Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:17.067Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:18.573Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:20.078Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:22.273Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:24.277Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:26.276Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:28.275Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:30.272Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:32.275Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:34.274Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:36.274Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:40:38.273Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:45:41.743Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:45:43.285Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:45:45.039Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:45:46.546Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:45:48.051Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:45:49.557Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:45:51.064Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:45:52.570Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:45:54.076Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:45:55.582Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:45:57.088Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:45:58.595Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:00.101Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:01.605Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:03.111Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:04.617Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:06.122Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:07.628Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:09.134Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:10.642Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:12.148Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:13.652Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:15.157Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:16.663Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:18.169Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:19.676Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:21.183Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:22.689Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:24.274Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:26.274Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:28.274Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:30.273Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:32.274Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:34.282Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:36.276Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:38.275Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:40.274Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:42.273Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:44.273Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:46:46.275Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:47:25.845Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:47:27.352Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:47:28.692Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:47:30.198Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:47:31.439Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:47:33.540Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:47:35.628Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:47:37.716Z  TypeError: Cannot read properties of null (reading '1')
+2025-12-15T11:51:00.526Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:02.034Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:03.541Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:05.048Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:06.556Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:08.060Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:09.567Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:11.072Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:12.579Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:16.029Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:17.535Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:19.041Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:20.547Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:22.052Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:23.557Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:25.064Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:26.571Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:28.079Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:29.584Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:31.090Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:32.595Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:34.101Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:35.608Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:37.114Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:38.621Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:40.129Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:41.637Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:43.145Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:44.654Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:46.162Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:47.670Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:49.179Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:50.685Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:52.192Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:53.699Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:55.207Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:57.494Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:51:59.002Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:52:00.509Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:52:02.014Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:52:12.482Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:52:13.993Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:52:15.501Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:52:17.009Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:52:20.646Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:52:22.155Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:52:23.663Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:52:25.171Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:52:27.912Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:53:32.044Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T11:53:34.498Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T12:15:38.316Z  NativeError: PKCS11 module not loaded yet
+2025-12-15T12:15:39.829Z  NativeError: PKCS11 module not loaded yet

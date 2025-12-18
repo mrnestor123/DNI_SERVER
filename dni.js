@@ -1,6 +1,9 @@
 const pkcs11js = require('pkcs11js');
 const pkcs11 = new pkcs11js.PKCS11();
 
+const signer = require('node-signpdf')
+
+
 
 //pkcs11.load('/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so');
 //pkcs11.load('/usr/lib/libpkcs11-dnie.so');
@@ -62,8 +65,6 @@ function getDNI(){
 }
 
 
-
-
 function findPadron(dni, modelo = 1){
     const wsdlUrl = 'https://etributa.alcasser.es:8643/epadronws/services/CertificadoEmpadronamientoPort?wsdl';
     const soapRequest = `
@@ -103,7 +104,6 @@ let token = '';
 
 
 // document could be DNI, NIE, PASSPORT
-//
 // encontrar padron desde digitalvalue
 async function DVfindPadron(dni, modelo = 1, options={realm:'requena', document: 'DNI', birthDate: null}){
         
@@ -125,7 +125,7 @@ async function DVfindPadron(dni, modelo = 1, options={realm:'requena', document:
         "filtros[0].Nombre": "NumDocumento",
         "filtros[0].Valor": dni, // cambiar otro nombre
         "filtros[1].Nombre": "FechaNacimiento",
-        "filtros[1].Valor": options?.birthDate ? options.birthDate : '1997-09-15',
+        "filtros[1].Valor": options?.birthDate ? options.birthDate.replace('/','-') : '1997-09-15',
         "filtros[2].Nombre": "TipoDocumento",
         "filtros[2].Valor": docTypes[options?.document || 'DNI'],
     })
@@ -237,8 +237,22 @@ function encodeData(data){
 }
 
 
-// debería de comprobar el token solo una vez?
+function signDocument(doc){ 
+     // Configuración de certificados por ayuntamiento
+    const certificateConfig = {
+        'alcasser': {
+            path: process.env.CERT_ALCASSER_PATH || './certificates/alcasser.p12',
+            password: process.env.CERT_ALCASSER_PASS
+        },
+        'requena': {
+            path: process.env.CERT_REQUENA_PATH || './certificates/requena.p12',
+            password: process.env.CERT_REQUENA_PASS
+        }
+    };
 
+}
+
+// debería de comprobar el token solo una vez?
 
 
 module.exports = { getDNI, findPadron, DVfindPadron }

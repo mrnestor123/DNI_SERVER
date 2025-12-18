@@ -1,6 +1,7 @@
 {
     "name": "dniServer",
     "dependencies": {
+        "@signpdf/signpdf": "^3.2.5",
         "cors": "^2.8.5",
         "express": "^4.21.1",
         "node": "^23.1.0",
