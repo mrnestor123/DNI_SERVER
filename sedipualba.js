@@ -1,6 +1,6 @@
 const { createHash } = require('crypto');
 
-const { DEFAULT_USER, DEFAULT_PASSWORD, usersByRealm } = require('config');
+const { DEFAULT_USER, DEFAULT_PASSWORD, usersByRealm } = require('./config');
 
 
 

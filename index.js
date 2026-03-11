@@ -57,16 +57,13 @@ app.get('/dni/search/:dni', async (req,res)=>{
                 let idDocuFirma = await uploadSedipuAlba(padron, {realm: req.query.realm});
 
                 await Promise.all([
-                    setDocuFirmaPdfBase64(idDocuFirma, base64, {realm: req.query.realm}),
+                    setDocuFirmaPdfBase64(idDocuFirma, padron, {realm: req.query.realm}),
                     nuevoFirmanteServidor(idDocuFirma, {realm:req.query.realm}),
                 ]);
 
                 await enviarDocufirmaAFirmar(idDocuFirma, {realm: req.query.realm});
 
-                const pdfBase64 = await waitAndGetSignedBase64(idDocuFirma, {realm: req.query.realm});
-
-                return res.json({ base64: pdfBase64 });
-
+                padron = await waitAndGetSignedBase64(idDocuFirma, {realm: req.query.realm});
 
             } else {
                 throw Error();
@@ -79,6 +76,7 @@ app.get('/dni/search/:dni', async (req,res)=>{
 
         res.status(200).json(padron)
     } catch(e) {
+        console.log('E', e.toString())
         logError(e && e.toString())
         res.status(400).json({error: 'No se ha encontrado el padron con este dni'})
     }
